@@ -8,16 +8,21 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext .js,.ts,.jsx,.tsx --fix --quiet ./packages",
+    "build:dev": "rimraf dist && rollup --bundleConfigAsCjs --config scripts/rollup/react.config.js",
     "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@kitiho/eslint-config": "^0.1.2",
+    "@rollup/plugin-commonjs": "^24.0.1",
     "commitlint": "^17.4.2",
     "eslint": "^8.33.0",
     "husky": "^8.0.0",
+    "rimraf": "^4.1.2",
     "rollup": "^3.12.1",
+    "rollup-plugin-generate-package-json": "^3.2.0",
+    "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^4.9.5"
   }
 }
