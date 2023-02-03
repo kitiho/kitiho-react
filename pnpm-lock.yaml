@@ -22,6 +22,15 @@ importers:
       rollup: 3.12.1
       typescript: 4.9.5
 
+  packages/react:
+    specifiers:
+      '@kitiho-react/shared': 'workspace: *'
+    dependencies:
+      '@kitiho-react/shared': link:../shared
+
+  packages/shared:
+    specifiers: {}
+
 packages:
 
   /@babel/code-frame/7.18.6:

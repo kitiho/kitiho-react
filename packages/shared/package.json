@@ -1,0 +1,11 @@
+{
+  "name": "@kitiho-react/shared",
+  "version": "1.0.0",
+  "description": "公用辅助方法以及类型定义",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

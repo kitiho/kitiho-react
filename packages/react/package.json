@@ -1,0 +1,12 @@
+{
+  "name": "@kitiho-react/react",
+  "version": "1.0.0",
+  "description": "react公用方法",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "module": "index.ts",
+  "dependencies": {
+    "@kitiho-react/shared": "workspace: *"
+  }
+}
