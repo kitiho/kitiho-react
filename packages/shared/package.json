@@ -1,5 +1,5 @@
 {
-  "name": "@kitiho-react/shared",
+  "name": "shared",
   "version": "1.0.0",
   "description": "公用辅助方法以及类型定义",
   "author": "",

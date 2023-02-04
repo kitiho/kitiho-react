@@ -1,5 +1,5 @@
 {
-  "name": "@kitiho-react/react",
+  "name": "react",
   "version": "1.0.0",
   "description": "react公用方法",
   "author": "",
@@ -7,6 +7,6 @@
   "keywords": [],
   "module": "index.ts",
   "dependencies": {
-    "@kitiho-react/shared": "workspace: *"
+    "shared": "workspace: *"
   }
 }

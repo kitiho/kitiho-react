@@ -1,6 +1,6 @@
 // ReactElement
-import { REACT_ELEMENT_TYPE } from '@kitiho-react/shared/ReactSymbols'
-import type { ElementType, IReactElement, Key, Props, Ref } from '@kitiho-react/shared/ReactTypes'
+import { REACT_ELEMENT_TYPE } from 'shared/ReactSymbols'
+import type { ElementType, IReactElement, Key, Props, Ref } from 'shared/ReactTypes'
 
 export const ReactElement = function (type: ElementType, key: Key, ref: Ref, props: Props): IReactElement {
   const element = {
@@ -14,7 +14,7 @@ export const ReactElement = function (type: ElementType, key: Key, ref: Ref, pro
   return element
 }
 export const jsx = (type: ElementType, config: any, ...maybeChildren: any) => {
-  const props: Props = null
+  const props: Props = {}
   let key: Key = null
   let ref: Ref = null
 
@@ -33,7 +33,7 @@ export const jsx = (type: ElementType, config: any, ...maybeChildren: any) => {
     }
 
     // 判断是不是config自己的prop 而不是原型的prop
-    if (Object.prototype.hasOwnProperty.call(config, prop))
+    if ({}.hasOwnProperty.call(config, prop))
       props[prop] = val
   }
 
@@ -48,4 +48,29 @@ export const jsx = (type: ElementType, config: any, ...maybeChildren: any) => {
   return ReactElement(type, key, ref, props)
 }
 
-export const jsxDEV = jsx
+export const jsxDEV = (type: ElementType, config: any) => {
+  const props: Props = {}
+  let key: Key = null
+  let ref: Ref = null
+
+  for (const prop in config) {
+    const val = config[prop]
+    if (prop === 'key') {
+      if (val !== undefined)
+        key = `${val}`
+      continue
+    }
+
+    if (prop === 'ref') {
+      if (val !== undefined)
+        ref = val
+      continue
+    }
+
+    // 判断是不是config自己的prop 而不是原型的prop
+    if ({}.hasOwnProperty.call(config, prop))
+      props[prop] = val
+  }
+
+  return ReactElement(type, key, ref, props)
+}

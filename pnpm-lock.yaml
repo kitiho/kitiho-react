@@ -32,9 +32,9 @@ importers:
 
   packages/react:
     specifiers:
-      '@kitiho-react/shared': 'workspace: *'
+      shared: 'workspace: *'
     dependencies:
-      '@kitiho-react/shared': link:../shared
+      shared: link:../shared
 
   packages/shared:
     specifiers: {}
